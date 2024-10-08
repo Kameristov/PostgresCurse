@@ -15,5 +15,5 @@ run:
 exec: 
 	docker exec \
 	-it postgres-curse psql \
-	-d thai \
+	-d postgres \
 	-U postgres 
