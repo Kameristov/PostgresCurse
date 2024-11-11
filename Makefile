@@ -11,7 +11,7 @@ run:
 	-v ${CURDIR}/db:/var/lib/postgresql/data\
 	-d postgres:16.4
 
-run-thai:
+run_thai:
 	docker run \
 	--rm \
 	--name postgres-curse \
@@ -30,6 +30,12 @@ exec:
 	-d postgres \
 	-U postgres 
 
-install-thai:
+exec_thai: 
+	docker exec \
+	-it postgres-curse psql \
+	-d thai \
+	-U postgres 
+
+install_thai:
 	wget -P ${CURDIR}/migration/ https://storage.googleapis.com/thaibus/thai_small.tar.gz
-	sudo tar -xvf thai_small.tar.gz
+	sudo tar -xvf ${CURDIR}/migration/thai_small.tar.gz
