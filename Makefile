@@ -29,3 +29,7 @@ exec:
 	-it postgres-curse psql \
 	-d postgres \
 	-U postgres 
+
+install-thai:
+	wget -P ${CURDIR}/migration/ https://storage.googleapis.com/thaibus/thai_small.tar.gz
+	sudo tar -xvf thai_small.tar.gz
